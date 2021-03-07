@@ -1,0 +1,60 @@
+
+
+    Voici la carte
+
+    Takoyaki
+    Katsudon
+    Udon
+    Ramen
+    MatchaCookie
+
+    Par defauld , chaque cuisine a 2 cuisinier
+
+    BONJOUR, pour lancer sa commande voici comment faire:
+
+       -node --experimental-worker main.js plat cookTimer taille plat2 cookTimer2 taille2
+
+       plat  : 1 parmettre pour le nom du plat
+       cookTimer : 1 paramettre pour le muliplicateur de temp de cuisson
+       taille : un parametre pour la taille
+
+    exemple de requete
+
+       -node --experimental-worker main.js Takoyaki 2 XL Ramen 3 XX MatchaCookie 6 S Udon 8 XX MatchaCookie 8 L
+            les plat :{
+                Takoyaki
+                Ramen
+                MatchaCookie
+                Udon
+                MatchaCookie
+            }
+       -node --experimental-worker main.js Ramen 5 XL Udon 8 XL Ramen 12 XX Ramen 8 S MatchaCookie 10 L Ramen 3 XX MatchaCookie 6 S
+            les plat :{
+                Ramen
+                Udon
+                Ramen
+                Ramen
+                MatchaCookie
+                Ramen
+                MatchaCookie
+            }
+       -node --experimental-worker main.js XX MatchaCookie 8 L Udon 8 XL
+            les plat :{
+                MatchaCookie
+                Udon
+            }
+       -node --experimental-worker main.js Ramen 5 XL Udon 8 XL Ramen 12 XX Ramen 8 S MatchaCookie 10 L Ramen 3 XX MatchaCookie 6 S XX MatchaCookie 8 L Udon 8 XL
+            les plat :{
+                Ramen
+                Udon
+                Ramen
+                Ramen
+                MatchaCookie
+                Ramen
+                MatchaCookie
+                MatchaCookie
+                Udon
+            }
+       
+
+
